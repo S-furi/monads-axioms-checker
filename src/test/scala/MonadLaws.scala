@@ -39,7 +39,7 @@ object MonadLaws:
           val rhs = ma.flatMap(a => f(a).flatMap(g))
           eqProp(lhs, rhs)(eqM)
 
-object MonadLawsRunner:
+object MonadLawsChecker:
   def runCheks(name: String)(props: Properties): Unit =
     import org.scalacheck.Test
     import org.scalacheck.Test.Parameters

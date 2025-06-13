@@ -55,4 +55,4 @@ object MonadOptionCheck:
         case None        => None
 
 object CheckOptionMonadLaws extends App:
-  MonadLawsRunner.runCheks("OptionMonad")(MonadOptionCheck.optionMonadLaws)
+  MonadLawsChecker.runCheks("OptionMonad")(MonadOptionCheck.optionMonadLaws)

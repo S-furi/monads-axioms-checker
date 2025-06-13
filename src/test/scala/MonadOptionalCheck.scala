@@ -53,4 +53,4 @@ object MonadOptionalCheck:
   )
 
 object CheckOptionalMonadLaws extends App:
-  MonadLawsRunner.runCheks("OptionalMonad")(MonadOptionalCheck.optionalMonadLaws)
+  MonadLawsChecker.runCheks("OptionalMonad")(MonadOptionalCheck.optionalMonadLaws)

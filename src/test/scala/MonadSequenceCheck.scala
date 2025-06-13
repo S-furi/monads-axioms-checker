@@ -62,4 +62,4 @@ object MonadSequenceCheck:
   case class P2D(a: Double, b: Double)
 
 object CheckSequenceMonadLaws extends App:
-    MonadLawsRunner.runCheks("SequenceMonad")(MonadSequenceCheck.sequenceMonadLaws)
+    MonadLawsChecker.runCheks("SequenceMonad")(MonadSequenceCheck.sequenceMonadLaws)
