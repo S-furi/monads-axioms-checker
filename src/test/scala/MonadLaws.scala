@@ -1,7 +1,7 @@
 package scala
 
-import org.scalacheck.{Arbitrary, Prop, Properties}
 import org.scalacheck.Prop.*
+import org.scalacheck.{Arbitrary, Prop, Properties}
 
 import scala.Monads.Monad
 
