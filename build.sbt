@@ -4,7 +4,7 @@ ThisBuild / scalaVersion := "3.4.0"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "monad-tester",
+    name := "monad-axioms-checker",
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.2.12" % Test,
       "org.scalacheck" %% "scalacheck" % "1.17.0"
