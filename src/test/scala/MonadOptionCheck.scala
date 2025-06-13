@@ -55,14 +55,4 @@ object MonadOptionCheck:
         case None        => None
 
 object CheckOptionMonadLaws extends App:
-  import org.scalacheck.Test
-  import org.scalacheck.Test.Parameters
-
-  val params = Parameters.default.withMinSuccessfulTests(100)
-
-  MonadOptionCheck.optionMonadLaws.properties.foreach:
-    case (name, prop) =>
-      println(s"Checking property: $name")
-      val result = Test.check(params, prop)
-      println:
-        s"Property '$name' ${if result.passed then "passed ✅" else "failed ❌"} with ${result.succeeded} tests (discarded: ${result.discarded})"
+  MonadLawsRunner.runCheks("OptionMonad")(MonadOptionCheck.optionMonadLaws)

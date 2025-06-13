@@ -38,3 +38,16 @@ object MonadLaws:
           val lhs = ma.flatMap(f).flatMap(g)
           val rhs = ma.flatMap(a => f(a).flatMap(g))
           eqProp(lhs, rhs)(eqM)
+
+object MonadLawsRunner:
+  def runCheks(name: String)(props: Properties): Unit =
+    import org.scalacheck.Test
+    import org.scalacheck.Test.Parameters
+
+    val params = Parameters.default.withMinSuccessfulTests(100)
+    props.properties.foreach:
+        case (name, prop) =>
+            println(s"Checking property: $name")
+            Test.check(params, prop) match
+              case Test.Result(Test.Passed, _, discarded, _, time)  => println(s"$name ✅ ${if discarded > 0 then "(discarded: $discarded) " else ""} $time ms)")
+              case _ => println(s"$name ❌")
