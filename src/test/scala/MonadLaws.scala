@@ -25,7 +25,7 @@ object MonadLaws:
         forAll: (a: A, f: A => M[B]) =>
           val lhs = monad.unit(a).flatMap(f)
           val rhs = f(a)
-          eqProp(lhs, rhs)(eqM.asInstanceOf[(M[B], M[B]) => Boolean]) :| s"unit($a).flatMap(f) == f($a)"
+          eqProp(lhs, rhs)(eqM.asInstanceOf[(M[B], M[B]) => Boolean])
 
       property("right identity") =
         forAll: (ma: M[A]) =>
