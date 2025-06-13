@@ -1,4 +1,4 @@
-package scala.monads.checks
+package scala.checks
 
 import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.{Arbitrary, Gen}
@@ -49,3 +49,6 @@ object MonadStateCheck:
       (_: String) => State((d: Double) => (0.0, true))
     )
   )
+
+object CheckStateMonadLaws extends App:
+  MonadLawsChecker.runCheks("StateMonad")(MonadStateCheck.stateMonadLaws)

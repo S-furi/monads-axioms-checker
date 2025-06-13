@@ -15,7 +15,7 @@ object Optionals:
 
 
   given Monad[Optional] with
-    import Optional.{Just, Empty}
+    import Optional.{Empty, Just}
 
     def unit[A](a: A): Optional[A] = Just(a)
 

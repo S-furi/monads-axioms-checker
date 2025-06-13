@@ -1,4 +1,4 @@
-package scala.monads.checks
+package scala.checks
 
 import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.{Arbitrary, Gen, Properties}
