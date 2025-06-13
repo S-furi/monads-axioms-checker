@@ -1,4 +1,6 @@
-package scala.monads
+package scala
+
+import scala.monads.checks.{MonadOptionCheck, MonadOptionalCheck, MonadSequenceCheck}
 
 object MonadLawsCheksRunner extends App:
   Map(
