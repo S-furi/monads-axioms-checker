@@ -4,8 +4,8 @@ import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.{Arbitrary, Gen, Properties}
 
 import scala.Monads.Monad
-import scala.types.Optionals.Optional
-import scala.types.Optionals.Optional.{Empty, Just}
+import scala.monads.Optionals.Optional
+import scala.monads.Optionals.Optional.{Empty, Just}
 
 object MonadOptionalCheck:
 

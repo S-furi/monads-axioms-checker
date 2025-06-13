@@ -1,4 +1,4 @@
-package scala.types
+package scala.monads
 
 import scala.Monads.Monad
 

@@ -1,4 +1,4 @@
-package scala.types
+package scala.monads
 
 object CheksRunner extends App:
   Map(

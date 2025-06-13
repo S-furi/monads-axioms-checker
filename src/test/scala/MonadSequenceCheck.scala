@@ -4,8 +4,8 @@ import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.{Arbitrary, Gen, Properties}
 
 import scala.Monads.Monad
-import scala.types.Sequences.Sequence
-import scala.types.Sequences.Sequence.*
+import scala.monads.Sequences.Sequence
+import scala.monads.Sequences.Sequence.*
 
 object MonadSequenceCheck:
 
