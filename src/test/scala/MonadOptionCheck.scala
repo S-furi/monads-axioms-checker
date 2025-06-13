@@ -9,8 +9,8 @@ object MonadOptionCheck:
 
   val optionMonadLaws: Properties = MonadLaws.laws[Option, Int, String, Boolean](
     name = "Option"
-  )(
-    using summon[Monad[Option]],
+  )(using
+    summon[Monad[Option]],
     summon[Arbitrary[Int]],
     summon[Arbitrary[Option[Int]]],
     summon[Arbitrary[Int => Option[String]]],
@@ -20,10 +20,6 @@ object MonadOptionCheck:
 
   def optionEq[A](x: Option[A], y: Option[A]): Boolean = x == y
 
-  given arbOptInt: Arbitrary[Option[Int]] = optionArbitrary[Int]
-
-  given arbOptStr: Arbitrary[Option[String]] = optionArbitrary[String]
-
   def optionArbitrary[A: Arbitrary]: Arbitrary[Option[A]] = Arbitrary(
     Gen.frequency(
       1 -> Gen.const(None),
@@ -31,6 +27,8 @@ object MonadOptionCheck:
     )
   )
 
+  given arbOptInt: Arbitrary[Option[Int]] = optionArbitrary[Int]
+  given arbOptStr: Arbitrary[Option[String]] = optionArbitrary[String]
   given arbOptBool: Arbitrary[Option[Boolean]] = optionArbitrary[Boolean]
 
   given Arbitrary[Int => Option[String]] = Arbitrary(
